@@ -10,8 +10,8 @@ propositional logic.
 import Html exposing (Attribute, Html)
 import Html.Attributes as Attributes
 import Set exposing (Set)
-import Env exposing (Env)
-import Expr exposing (Expr(..))
+import TruthTable.Env as Env exposing (Env)
+import TruthTable.Expr as Expr exposing (Expr(..))
 
 
 {-| Generate a truth table from a list of expressions.

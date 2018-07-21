@@ -1,4 +1,4 @@
-module Expr exposing (Expr(..), eval, toString, vars)
+module TruthTable.Expr exposing (Expr(..), eval, toString, vars)
 
 {-| Represent propositional expressions. Can be used to automatically generate a truth table.
 
@@ -14,7 +14,7 @@ module Expr exposing (Expr(..), eval, toString, vars)
 
 -}
 
-import Env exposing (Env)
+import TruthTable.Env as Env exposing (Env)
 import Set exposing (Set)
 
 

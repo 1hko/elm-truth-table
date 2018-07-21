@@ -1,4 +1,4 @@
-module Env exposing (Env, make, get)
+module TruthTable.Env exposing (Env, make, get)
 
 import Dict exposing (Dict)
 
