@@ -8,6 +8,7 @@
     ],
     "exposed-modules": [
         "TruthTable",
+        "TruthTable.Env",
         "TruthTable.Expr"
     ],
     "dependencies": {
