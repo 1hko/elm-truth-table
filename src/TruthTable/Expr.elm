@@ -138,7 +138,7 @@ eval env expr =
 
         Var a ->
             Env.get a env
-                |> Result.fromMaybe ("unbound identifier: " ++ Basics.toString a)
+                |> Result.fromMaybe ("unbound identifier: " ++ a)
 
 
 implies : Bool -> Bool -> Bool

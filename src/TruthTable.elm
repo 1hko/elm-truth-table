@@ -56,7 +56,7 @@ fromExprs exprs =
             permute count [ True, False ]
                 |> List.map (tableRows (Env.make ids) exprs)
     in
-        Html.table [ Attributes.style [ ( "width", "100%" ) ] ]
+        Html.table [ Attributes.style "width" "100%" ]
             [ Html.thead [] [ tableHeader columns ]
             , Html.tbody [] rows
             ]
@@ -95,17 +95,20 @@ tableRows makeEnv exprs values =
 
 tableCell : List ( String, String ) -> String -> Html msg
 tableCell style text =
-    Html.td [ Attributes.style style ] [ Html.text text ]
+    let
+        appliedStyles = List.map (\(s1,s2) -> Attributes.style s1 s2 ) style
+    in
+        Html.td appliedStyles [ Html.text text ]
 
 
 permute : Int -> List a -> List (List a)
 permute n list =
     let
-        loop acc n xs =
-            if n == 0 then
+        loop acc m xs =
+            if m == 0 then
                 [ acc ]
             else
                 list
-                    |> List.concatMap (\x -> loop (acc ++ [ x ]) (n - 1) xs)
+                    |> List.concatMap (\x -> loop (acc ++ [ x ]) (m - 1) xs)
     in
         loop [] n list
