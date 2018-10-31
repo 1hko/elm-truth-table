@@ -10,7 +10,7 @@ type Env
 make : List String -> List Bool -> Env
 make ids values =
     values
-        |> List.map2 (,) ids
+        |> List.map2 toTuple ids
         |> Dict.fromList
         |> Env
 
@@ -18,3 +18,6 @@ make ids values =
 get : String -> Env -> Maybe Bool
 get key (Env d) =
     Dict.get key d
+
+toTuple : a -> b -> (a,b)
+toTuple a b = (a,b)
